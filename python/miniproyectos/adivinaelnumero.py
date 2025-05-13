@@ -5,33 +5,44 @@ def elegirnumero():
     num_elegido = random.randrange(1, 101)
     return num_elegido
 
-#Mensaje de bienvenida al juego
-print("Bienvenido al juego adivine el número\n ")
+def juego():
 
-#Llamamos a la función creada y determinamos el número del juego
-bot_num = elegirnumero()
+    #Mensaje de bienvenida al juego
+    print("Bienvenido al juego adivine el número\n ")
 
-#Creamos un contador para saber cuántas rondas van del juego (Lo iniciamos en 1)
-contador = 1
+    #Llamamos a la función creada y determinamos el número del juego
+    bot_num = elegirnumero()
 
-# Definimos el bucle del juego
-while True:
-    
-    #Pedimos al usuario que ingrese el número para adivinar
-    user_num = input("Ingrese un número entero (1-100): ")
+    #Creamos un contador para saber cuántas rondas van del juego (Lo iniciamos en 1)
+    contador = 1
 
-    #Usamos condicional if para determinar si el número es el mismo
-    if user_num == bot_num:
-        print("Adivinaste el número!")
-        print(f"Lo adivinaste en {contador} intentos")
-        break
+    # Definimos el bucle del juego
+    while True:
+        
+        #Pedimos al usuario que ingrese el número para adivinar
+        user_num = int(input("Ingrese un número entero (1-100): "))
 
-    #Usamos elif para determinar si el número elegido es mayor que el número del juego y decimos que es más abajo
-    elif user_num > bot_num:
-        print("Más abajo")
-        print("Otro intento \n ")
+        #Usamos condicional if para determinar si el número es el mismo
+        if user_num == bot_num:
+            print("Adivinaste el número!")
+            print(f"Lo adivinaste en {contador} intentos")
+            break
 
-    #Caso contrario, si no es mayor, por ennde es más arriba
-    else:
-        print("Más arriba")
-        print("Otro intento \n ")
+        #Usamos elif para determinar si el número elegido es mayor que el número del juego y decimos que es más abajo
+        elif user_num > bot_num:
+            print("Más abajo")
+            print("Otro intento \n ")
+            contador += 1
+
+        #Caso contrario, si no es mayor, por ende es más arriba
+        else:
+            print("Más arriba")
+            print("Otro intento \n ")
+            contador += 1
+
+#Inicio del juego usando __name__
+
+if __name__ == "__main__":
+    juego()
+
+#Version 1.0 del juego
