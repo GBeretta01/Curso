@@ -1,19 +1,25 @@
 import random
 
-def elegir_palabra(palabras):
-    palabra_elegida = random.choice(palabras)
+#Creamos la función para elegir la palabra de la lista de forma al azar
+def elegir_palabra(lista_palabras):
+    palabra_elegida = random.choice(lista_palabras)
     return palabra_elegida
 
+#Definimos la lista de palabras
 lista_palabras = ['comida', 'casa', 'auto', 'manzana', 'panda', 'programar']
 
+#Determinamos la variable para la palabra elegida por la función
 elec_palabra = elegir_palabra(lista_palabras)
 
+#Determinamos el conjunto de letras de la palabra escogida, la función set() sirve para sacar las letras sin repetir
 letrasporadivinar = set(elec_palabra)
 
+#Determinamos las variables de lista de letras correctas e incorrecta y la variable de intentos máximos [6]
 letras_correctas = []
 letras_incorrectas = []
 intentos_max = 6
 
+#Creamos un while (bucle) donde si la cantidad de carácteres en entero de las letras incorrectas es mayor que intentos máximos y letras por adivinar
 while len(letras_incorrectas) < intentos_max and letrasporadivinar:
     palabra_oculta = [letra if letra in letras_correctas else '_ ' for letra in elec_palabra]
     print(f"\nPalabra {' '.join(palabra_oculta)}")
