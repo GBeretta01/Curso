@@ -126,7 +126,7 @@ def bubble_sort() -> int:
     
     print(enteros)
 
-def invertir_lista():
+def invertir_lista() -> None:
     #Crea una función invertir_lista(lst: list) -> list que reciba una lista y devuelva otra con los mismos elementos en orden inverso, sin usar reversed(), list.reverse() ni slicing (lst[::-1]).
     print("Invertir la lista sin usar ninguna función ni slicing.")
 
@@ -148,4 +148,28 @@ def invertir_lista():
 
     print(lista_invertida)
 
-invertir_lista()
+def lista_anidada() -> None:
+    #Dada una lista que contiene sublistas (por ejemplo, [[1,2], [3,4,5], [6]]), escribe 
+    # aplanar(lista_anidada: list[list]) -> list que devuelva una sola lista con todos los 
+    # elementos en el mismo orden ([1,2,3,4,5,6]).
+    
+    print("Crear una lista de sublistas, todo en una sola lista")
+
+    #Definimos la lista con sublistas
+    lista_inicial = [[1,2,3],
+                     [4,5,6],
+                     [7,8,9]]
+    
+    #Observamos que es una matrix de 3x3, por ende se necesitará 2 for para recorrerla
+    
+    #Definimos la lista final donde se guardará todo
+    lista_final = []
+
+    #Creamos el doble for, uno que recorra la fila y otro cada item dentro de ella
+    for i in range(len(lista_inicial)):
+        for j in range(len(lista_inicial[i])):
+            lista_final.append(lista_inicial[i][j])
+
+    print(lista_final)
+
+lista_anidada()
