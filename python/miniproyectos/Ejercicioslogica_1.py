@@ -108,6 +108,8 @@ def tablas_multiplicar() -> None:
         print()
 
 def bubble_sort() -> int:
+
+
     #Implementa la función bubble_sort(lista: list[int]) -> list[int] que reciba una lista de enteros y la ordene de menor a mayor usando el algoritmo de burbujeo.
     print("Implementa la función que reciba una lista de enteros y la ordene de menor a mayor usando el algoritmo de burbujeo.")
 
@@ -123,3 +125,27 @@ def bubble_sort() -> int:
                 enteros[i], enteros[i+1] = enteros [i+1], enteros[i]
     
     print(enteros)
+
+def invertir_lista():
+    #Crea una función invertir_lista(lst: list) -> list que reciba una lista y devuelva otra con los mismos elementos en orden inverso, sin usar reversed(), list.reverse() ni slicing (lst[::-1]).
+    print("Invertir la lista sin usar ninguna función ni slicing.")
+
+    #Determinar la lista
+    lista = ["Carro","Casa","Pediatría","Perro","Aim"]
+
+    #Determinar la lista vacía para su posterior llenado
+    lista_invertida = []
+
+    #Bucle for para iterar sobre cada una de la lista
+    #En la funcion range(len(lista)-1, -1, -1), para explicar:
+    # 1- len(lista) - 1: Es el inicio, desde donde empenzará la lista, sería el tamaño - 1 para tener el último indice
+    # 2- -1 : Es hasta donde llegaría la lista sin incluir ese número. Es decir que llegaría al índice 0 ["Carro"]
+    # 3- -1: Esto es cada cuánto, es decir, por naturaleza el range aumenta de 1 en 1, al poner -1 va decreciendo de -1 en -1 hasta llegar al 0 ["Carro"]    
+    for palabra in range(len(lista)-1, -1, -1):
+    
+    #Lo que hace es nuestra lista vacía, va agregándole a atrvés de append(lista[palabra]), donde palabra es la palabra que se va ir agregando, es decir, de atrás hacia adelante
+        lista_invertida.append(lista[palabra])
+
+    print(lista_invertida)
+
+invertir_lista()
